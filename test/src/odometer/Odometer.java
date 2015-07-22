@@ -9,12 +9,17 @@ public class Odometer {
 	private static final int LAST_DIGIT = 9;
 	private ArrayList<Integer> listOfNumbers;
 	private char[] number;
+	private int numberOfDigits;
 
-	public ArrayList<Integer> findNumbers(int numberOfDigits) {
+	public Odometer(int numberOfDigits) {
+		this.numberOfDigits = numberOfDigits;
+		findNumbers();
+	}
+
+	private void findNumbers() {
 		number = new char[numberOfDigits];
 		listOfNumbers = new ArrayList<Integer>();
 		generateNumbers(START_DIGIT, 0, numberOfDigits);
-		return listOfNumbers;
 	}
 
 	private void generateNumbers(int startNumber, int index, int numberOfDigits) {
